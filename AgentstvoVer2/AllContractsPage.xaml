@@ -1,0 +1,42 @@
+﻿<Page x:Class="AgentstvoVer2.AllContractsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AgentstvoVer2"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+       Title="AllContracts" Height="450" Width="800">
+
+    <Grid>
+        <!-- Верхняя панель с текстом -->
+        <Grid Background="Gray" Height="61" VerticalAlignment="Top">
+            <TextBlock Text="База договоров" FontSize="25" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <!-- DataGrid для отображения информации о клиентах -->
+        <Grid Margin="0,66,0,77">
+            <DataGrid x:Name="ClientBaseInfo" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="КодКлиента"  Binding="{Binding ID_Clients}"/>
+                    <DataGridTextColumn Header="ФИО" Width="*" Binding="{Binding FIO}"/>
+                    <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Adress}"/>
+                    <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Options}"/>
+                    <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Номер" Width="*" Binding="{Binding NumberPhone}"/>
+                    <DataGridTemplateColumn Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Удалить" Name="Delete" Click="Delete_Click_1"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <!-- Кнопки для добавления и выхода -->
+
+
+    </Grid>
+</Page>

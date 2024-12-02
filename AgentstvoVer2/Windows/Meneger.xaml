@@ -1,0 +1,70 @@
+﻿<Window x:Class="AgentstvoVer2.Meneger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AgentstvoVer2"
+        mc:Ignorable="d"
+        Title="Meneger" Height="1280" Width="1024" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <!-- Левая колонка -->
+            <ColumnDefinition Width="1520*"/>
+            <!-- Правая колонка -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая колонка -->
+        <Border Grid.Column="0" BorderBrush="WhiteSmoke" BorderThickness="5" Background="White">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="12.416"/>
+                    <RowDefinition Height="151.584"/>
+                    <!-- Логотип и название -->
+                    <RowDefinition Height="*"/>
+                    <!-- Пространство для кнопок -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Текущее время -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Кнопка "Выйти" -->
+                </Grid.RowDefinitions>
+
+                <!-- Логотип и название -->
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,12,0,0" Grid.Row="1">
+                    <Image Source="E:\Курсовая\ver2\AgentstvoVer2\AgentstvoVer2\Source\cd8f59bd9b2b11ef8a924e48c22017a6_1 (1).png" Height="140" Stretch="Uniform" />
+
+                </StackPanel>
+
+                <!-- Кнопки -->
+                <StackPanel Grid.Row="2" VerticalAlignment="Top" Margin="20,20,20,0">
+                    <Button Content="Оформить договор" Height="50" Margin="0,10,0,10" Name="ContractBtn" Click="ContractBtn_Click" />
+                    <Button Content="Все договоры" Height="50" Margin="0,10,0,10" Name="AllContractsBtn" Click="AllContractsBtn_Click" />
+                </StackPanel>
+                <!-- Кнопка "Выйти" -->
+                <Button Content="Выйти" Name="CloseBtn" Height="36" Width="117" Margin="0,217,0,0" VerticalAlignment="Top" 
+                    HorizontalAlignment="Center" Grid.Row="2" Click="CloseBtn_Click"  Grid.RowSpan="3" />
+            </Grid>
+        </Border>
+
+        <!-- Правая колонка -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="771*"/>
+                <RowDefinition Height="293*"/>
+            </Grid.RowDefinitions>
+            <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Grid.RowSpan="2" />
+            <TextBlock Name="SecondTextBox"
+            Text="Оформление договора" 
+                   FontSize="36" FontWeight="Bold" TextWrapping="Wrap" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   TextAlignment="Center" Margin="0,5,0,0" Visibility="Hidden" />
+
+            <TextBlock Name="FirstTextBox"
+Text="Добро пожаловать в систему! Вы зашли как менеджер!" 
+       FontSize="36" FontWeight="Bold" TextWrapping="Wrap" 
+       HorizontalAlignment="Center" VerticalAlignment="Top" 
+       TextAlignment="Center" Visibility="Visible" Margin="0,508,0,0" />
+        </Grid>
+    </Grid>
+
+</Window>
